@@ -2,12 +2,12 @@ import random
 
 def remove_duplicates_and_sort_desc(list_of_digits: list) -> list:
     # Delete duplications from the list
-    new_list = removeDuplicates(list_of_digits)
+    new_list = remove_duplicates(list_of_digits)
     # Sort list in descending order
     new_list.sort(reverse=True)
     return new_list
 
-def removeDuplicates(list_of_digits: list) -> list:
+def remove_duplicates(list_of_digits: list) -> list:
     new_list = []
     for n in list_of_digits:
         if n not in new_list:
