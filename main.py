@@ -1,20 +1,34 @@
-def removeDuplicatesAndSortDesc(listOfDigits: list) -> list:
-    # Delete duplications from the list
-    newList = removeDuplicates(listOfDigits)
-    # Sort list in descending order
-    newList.sort(reverse=True)
-    return newList
+import random
 
-def removeDuplicates(listOfDigits: list) -> list:
-    newList = []
-    for n in listOfDigits:
-        if n not in newList:
-            newList.append(n)
-    return newList
+def remove_duplicates_and_sort_desc(list_of_digits: list) -> list:
+    # Delete duplications from the list
+    new_list = removeDuplicates(list_of_digits)
+    # Sort list in descending order
+    new_list.sort(reverse=True)
+    return new_list
+
+def removeDuplicates(list_of_digits: list) -> list:
+    new_list = []
+    for n in list_of_digits:
+        if n not in new_list:
+            new_list.append(n)
+    return new_list
+
+def generate_list_of_digits() -> list:
+    digits = []
+    for i in range(0,10):
+        n = random.randint(1,100)
+        digits.append(n)
+    return digits
 
 # CODE EXAMPLE
 
 
-# Read the list of 10 digits in range 1-100
+print("OPTION ONE (Hard coded list): ")
 digits = [1, 2, 2, 4, 5, 6, 7, 8, 9, 9]
-print(removeDuplicatesAndSortDesc(digits))
+print(remove_duplicates_and_sort_desc(digits))
+
+# Read the randomly generated list
+print("OPTION TWO (Randomly generated list): ")
+digits = generate_list_of_digits();
+print(remove_duplicates_and_sort_desc(digits))
